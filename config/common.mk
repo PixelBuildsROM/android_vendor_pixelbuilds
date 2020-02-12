@@ -185,6 +185,9 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Bootanimation
 $(call inherit-product, vendor/pixelbuilds/config/bootanimation.mk)
 
+# Fonts
+$(call inherit-product, vendor/pixelbuilds/config/fonts.mk)
+
 # RRO Overlays
 $(call inherit-product, vendor/pixelbuilds/config/rro_overlays.mk)
 
