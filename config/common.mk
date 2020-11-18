@@ -182,6 +182,9 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.iorapd.enable=true
 
+# Bootanimation
+$(call inherit-product, vendor/pixelbuilds/config/bootanimation.mk)
+
 # RRO Overlays
 $(call inherit-product, vendor/pixelbuilds/config/rro_overlays.mk)
 
