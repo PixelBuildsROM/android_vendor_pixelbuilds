@@ -1,5 +1,6 @@
 # Copyright (C) 2017 Unlegacy-Android
 # Copyright (C) 2017,2020 The LineageOS Project
+# Copyright (C) 2021 The PixelBuilds Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,14 +15,25 @@
 # limitations under the License.
 
 # -----------------------------------------------------------------
-# Lineage OTA update package
+# PixelBuilds OTA update package
 
-LINEAGE_TARGET_PACKAGE := $(PRODUCT_OUT)/lineage-$(LINEAGE_VERSION).zip
+PIXELBUILDS_TARGET_PACKAGE := $(PRODUCT_OUT)/$(PIXELBUILDS_VERSION).zip
 
 SHA256 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/sha256sum
 
 .PHONY: bacon
 bacon: $(INTERNAL_OTA_PACKAGE_TARGET)
-	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(LINEAGE_TARGET_PACKAGE)
-	$(hide) $(SHA256) $(LINEAGE_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(LINEAGE_TARGET_PACKAGE).sha256sum
-	@echo "Package Complete: $(LINEAGE_TARGET_PACKAGE)" >&2
+	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(PIXELBUILDS_TARGET_PACKAGE)
+#	$(hide) $(SHA256) $(PIXELBUILDS_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(PIXELBUILDS_TARGET_PACKAGE).sha256sum
+        @echo " "
+	@echo " "
+	@echo "██████╗ ██╗██╗  ██╗███████╗██╗     ██████╗ ██╗   ██╗██╗██╗     ██████╗ ███████╗"
+        @echo "██╔══██╗██║╚██╗██╔╝██╔════╝██║     ██╔══██╗██║   ██║██║██║     ██╔══██╗██╔════╝"
+	@echo "██████╔╝██║ ╚███╔╝ █████╗  ██║     ██████╔╝██║   ██║██║██║     ██║  ██║███████╗"
+	@echo "██╔═══╝ ██║ ██╔██╗ ██╔══╝  ██║     ██╔══██╗██║   ██║██║██║     ██║  ██║╚════██║"
+	@echo "██║     ██║██╔╝ ██╗███████╗███████╗██████╔╝╚██████╔╝██║███████╗██████╔╝███████║"
+	@echo "╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝╚═════╝  ╚═════╝ ╚═╝╚══════╝╚═════╝ ╚══════╝"
+        @echo " "
+        @echo " "
+	@echo "Package Complete: $(PIXELBUILDS_TARGET_PACKAGE)" >&2
+	@echo "Package size: `du -h $(PIXELBUILDS_TARGET_PACKAGE) | cut -f 1`"
