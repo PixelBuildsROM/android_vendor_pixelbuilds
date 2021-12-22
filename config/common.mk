@@ -191,6 +191,9 @@ $(call inherit-product, vendor/pixelbuilds/config/bootanimation.mk)
 # Fonts
 $(call inherit-product, vendor/pixelbuilds/config/fonts.mk)
 
+# GApps
+$(call inherit-product, vendor/gapps/config.mk)
+
 # RRO Overlays
 $(call inherit-product, vendor/pixelbuilds/config/rro_overlays.mk)
 
