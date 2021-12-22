@@ -182,6 +182,9 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.iorapd.enable=true
 
+# Audio
+$(call inherit-product, vendor/pixelbuilds/config/audio.mk)
+
 # Bootanimation
 $(call inherit-product, vendor/pixelbuilds/config/bootanimation.mk)
 
