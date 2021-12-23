@@ -33,23 +33,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += ro.adb.secure=1
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += persist.sys.strictmode.disable=true
 endif
 
-# Backup Tool
-PRODUCT_COPY_FILES += \
-    vendor/pixelbuilds/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
-    vendor/pixelbuilds/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/pixelbuilds/prebuilt/common/bin/50-pixelbuilds.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-pixelbuilds.sh
-
-ifneq ($(strip $(AB_OTA_PARTITIONS) $(AB_OTA_POSTINSTALL_CONFIG)),)
-PRODUCT_COPY_FILES += \
-    vendor/pixelbuilds/prebuilt/common/bin/backuptool_ab.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.sh \
-    vendor/pixelbuilds/prebuilt/common/bin/backuptool_ab.functions:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.functions \
-    vendor/pixelbuilds/prebuilt/common/bin/backuptool_postinstall.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_postinstall.sh
-ifneq ($(TARGET_BUILD_VARIANT),user)
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.ota.allow_downgrade=true
-endif
-endif
-
 # Backup Services whitelist
 PRODUCT_COPY_FILES += \
     vendor/pixelbuilds/config/permissions/backup.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/backup.xml
