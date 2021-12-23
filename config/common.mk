@@ -118,6 +118,9 @@ PRODUCT_PACKAGE_OVERLAYS += \
     vendor/pixelbuilds/overlay/common \
     vendor/pixelbuilds/overlay-pixel/common
 
+# Soong
+include vendor/pixelbuilds/config/BoardConfigSoong.mk
+
 # TouchGestures
 PRODUCT_PACKAGES += \
     TouchGestures
