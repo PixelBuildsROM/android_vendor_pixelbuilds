@@ -1,2 +1,2 @@
-# Include LineageOS versions
-include $(TOPDIR)vendor/lineage/build/core/main_version.mk
+# Include PixelBuilds versions
+include $(TOPDIR)vendor/pixelbuilds/build/core/main_version.mk
